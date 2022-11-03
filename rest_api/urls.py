@@ -1,6 +1,8 @@
 
-from django import views
+from .views import api_response
 from django.urls import path
 
 urlpatterns = [
-    path("sendjson",views.)    ]
+    
+    path("sendjson",api_response,name="jsonresponse")    
+    ]
