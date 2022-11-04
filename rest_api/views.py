@@ -19,7 +19,6 @@ def api_response(request):
     elif operation_type == "subtraction":
         result = x - y
         
-    
     else:
         operation_type = "Invalid Operator"
         result = 0
