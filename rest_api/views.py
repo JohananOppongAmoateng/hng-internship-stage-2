@@ -1,32 +1,30 @@
 
 from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from django.shortcuts import render
+from django.http import JsonResponse
 
 # Create your views here.
 
 @api_view(["POST"])
 def api_response(request):
-    
-    operation_type = request.POST['operation_type']
-    x = int(request.POST['x'])
-    y = int(request.POST['y'])
+    operation_type = request.POST.get('operation_type')
+    print(operation_type)
+    x = int(request.POST.get('x'))
+    y = int(request.POST.get('y'))
 
     if operation_type == "addition":
         result = x + y
-        return Response({'slackUsername':'Johanan Amoateng','result':result,'operation_type':operation_type})
-
+        
     elif operation_type == "multiplication":
         result = x * y
-        return Response({'slackUsername':'Johanan Amoateng','result':result,'operation_type':operation_type})
-    
+        
     elif operation_type == "subtraction":
         result = x - y
-        return Response({'slackUsername':'Johanan Amoateng','result':result,'operation_type':operation_type})
+        
     
     else:
         operation_type = "Invalid Operator"
         result = 0
-        return Response({'slackUsername':'Johanan Amoateng','result':result,'operation_type':operation_type})
+
+    return JsonResponse({'slackUsername':'Johanan Amoateng','result':result,'operation_type':operation_type})
         
     
