@@ -1,4 +1,4 @@
-from re import X
+
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.shortcuts import render
@@ -21,8 +21,5 @@ def api_response(request):
     
     elif operation_type == "subtraction":
         result = x - y
-    
-    else:
-        return Response({'slackUsername':'Johanan Amoateng','operation_type':'invalid operator'})
-
+        
     return Response({'slackUsername':'Johanan Amoateng','result':result,'operation_type':operation_type})
