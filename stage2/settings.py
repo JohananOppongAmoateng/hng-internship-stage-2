@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['hng-internship-stage2.herokuapp.com']
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_api',
-    'rest_framework'
+
 ]
 
 MIDDLEWARE = [
