@@ -1,10 +1,9 @@
 
-from rest_framework.decorators import api_view
+# from rest_framework.decorators import api_view
 from django.http import JsonResponse
 
 # Create your views here.
 
-@api_view(["POST"])
 def api_response(request):
     operation_type = request.POST.get('operation_type')
     print(operation_type)
